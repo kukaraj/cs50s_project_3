@@ -1,0 +1,23 @@
+{% extends "accounts/base.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block body %}
+<div class="row align-items-center h-100">
+
+	<div class="col"></div>
+    
+    <div class="col-6 ">
+    	<div class="container-fluid home">
+    		<a href="{% url 'login' %}" class="btn btn-danger">Login</a>
+    		<a href="{% url 'signup' %}" class="btn btn-dark">Sign Up</a>
+        </div>
+    </div>
+
+    <div class="col"></div>
+
+ </div>
+
+{% endblock %}

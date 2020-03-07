@@ -1,0 +1,102 @@
+{% extends "orders/base.html" %}
+
+{% load static %}
+
+{% block extrahead2 %}
+<script src ="{% static 'orders/orders.js' %}"></script>
+{% endblock %}
+
+
+{% block body2 %}
+
+<div class="content">
+	
+	<div class ="option_select">
+		{% csrf_token %}
+		<span> Choose your pizza: </span>
+		<span class="dropdown">
+			<button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown"> _ _ _ _ _ _ 
+				<a class="caret"></a>
+			</button>
+			<ul class="dropdown-menu crust " >
+				{% for type in crust %}
+				<li><a href="">{{type}}</a></li>
+				{% endfor %}
+			</ul>
+		</span>
+	</div>
+
+	<div class ="option_select">
+		<span> Choose your size: </span>
+		<span class="dropdown">
+			<button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown"> _ _ _ _ _ _ 
+				<a class="caret"></a>
+			</button>
+			<ul class="dropdown-menu siza">
+				{% for size in size %}
+				<li><a href="">{{size}}</a></li>
+				{% endfor %}
+			</ul>
+		</span>
+	</div>
+
+	<div class = "toppings">
+	<div class="option_select">
+		<span>Type of toppings: </span>
+		<span class="dropdown">
+			<button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown"> _ _ _ _ _ _
+				<a class="caret"></a>
+			</button>
+			<ul class="dropdown-menu topping" id ="toppings_type">
+				{% for no in no_of_toppings %}
+				<li><a href="">{{no}}</a></li>
+				{% endfor %}
+			</ul>
+		</span>
+
+		<span class="dropdown" style="visibility: hidden;">
+			<button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown"> _ _ _ _ _ _ 
+				<a class="caret"></a>
+			</button>
+			<ul class="dropdown-menu scrollable-menu">
+				{% for topping in toppings %}
+				<li><a href="#">{{topping}}</a></li>
+				{% endfor %}
+			</ul>
+		</span>
+
+		<span class="dropdown" style="visibility: hidden;">
+			<button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown"> _ _ _ _ _ _
+				<a class="caret"></a>
+			</button>
+			<ul class="dropdown-menu scrollable-menu">
+				{% for topping in toppings %}
+				<li><a href="#">{{topping}}</a></li>
+				{% endfor %}
+			</ul>
+		</span>
+
+		<span class="dropdown" style="visibility: hidden;">
+			<button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown"> _ _ _ _ _ _ 
+				<a class="caret"></a>
+			</button>
+			<ul class="dropdown-menu scrollable-menu">
+				{% for topping in toppings %}
+				<li><a href="#">{{topping}}</a></li>
+				{% endfor %}
+			</ul>
+		</span>
+	    </div>
+
+	</div>
+
+	<div class ="total">
+		<span> Price:</span><span class="total_value"> </span><span class="total_msg"></span>
+	</div>
+
+	
+
+</div>
+
+
+{% endblock %}

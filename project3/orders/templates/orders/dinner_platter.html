@@ -1,0 +1,51 @@
+{% extends "orders/base.html" %}
+
+{% load static %}
+
+{% block extrahead2 %}
+<script src ="{% static 'orders/platter.js' %}"></script>
+{% endblock %}
+
+{% block body2 %}
+
+<div class="content">
+	
+	<div class ="option_select">
+		{% csrf_token %}
+		<span> Choose your platter: </span>
+		<span class="dropdown">
+			<button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown"> _ _ _ _ _ _ 
+				<a class="caret"></a>
+			</button>
+			<ul class="dropdown-menu scrollable-menu " >
+				{% for type in platter %}
+				<li><a href="">{{type}}</a></li>
+				{% endfor %}
+			</ul>
+		</span>
+	</div>
+
+	<div class ="option_select">
+		{% csrf_token %}
+		<span> Choose your size: </span>
+		<span class="dropdown">
+			<button class="btn btn-link dropdown-toggle" type="button" data-toggle="dropdown"> _ _ _ _ _ _ 
+				<a class="caret"></a>
+			</button>
+			<ul class="dropdown-menu scrollable-menu " >
+				{% for size in size %}
+				<li><a href="">{{size}}</a></li>
+				{% endfor %}
+			</ul>
+		</span>
+	</div>
+
+
+	<div class ="total">
+		<span> Price:</span><span class="total_value"> </span><span class="total_msg"></span>
+	</div>
+
+
+</div>
+
+{% endblock %}

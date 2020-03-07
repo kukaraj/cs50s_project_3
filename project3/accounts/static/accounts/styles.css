@@ -1,0 +1,56 @@
+label{
+	color: #ffffff;
+}
+
+span{
+padding-right: 15px;
+}
+
+.background{
+	background-image: url(images/pizza.jpg);
+	height :100vh;
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+	    
+}
+
+.alert{
+	text-align: center;
+	color: #ff0000;
+	font-size: 20px;
+}
+
+.home{
+	text-align: center;
+	align-items: center;
+	vertical-align: middle;
+}
+
+.btn-danger, .btn-dark{
+	margin-right: 2vh;
+	padding: 7px 60px !important;
+}
+
+.submit{
+	text-align: center;
+	color: #ffffff;
+}
+
+.login, .signup {
+	background-color:rgba(0, 0, 0, 0.5);
+	padding: 40px 50px;
+}
+
+.submit_signup{
+	color: #ffffff;
+	margin-top: 2vh;
+}
+
+
+
+
+
+
+
+

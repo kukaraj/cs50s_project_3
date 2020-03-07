@@ -1,0 +1,50 @@
+{% extends "orders/base.html" %}
+
+{% load static %}
+
+{% block extrahead2 %}
+{% endblock %}
+
+{% block body3 %}
+
+<div class="row align-items-center h-50">
+	<div class="col-1"></div>
+	<div class="col-9">
+
+		<table class="table table-sm">
+
+			<thead>
+				<tr>
+					<th scope="col">Item</th>
+					<th scope="col">Quantity</th>
+					<th scope="col">Price</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				{% for product in products %}
+				<tr>
+					<td>{{product.name}} {{product.toppings}}</td>
+					<td>{{product.quantity}}</td>
+					<td>{{product.price}}</td>
+				</tr>
+				{% endfor %}
+				<tr>
+					<td colspan="2">Total</td>
+					<td>{{basket_total}}</td>
+				</tr>
+			</tbody>
+
+		</table>
+
+		<div class="checkout">
+			<a class="checkout" href="{% url 'Delete' %}"> Delete basket</a>/
+			<a class="checkout" href="{% url 'Confirm' %}"> Confrim order</a>
+		</div>
+
+	</div>
+	<div class="col-1"></div>
+</div>
+
+
+{% endblock %}

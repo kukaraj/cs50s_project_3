@@ -1,0 +1,94 @@
+{% extends "accounts/base.html" %}
+
+{% load static %}
+
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'orders/orders.css' %}">
+{% block extrahead2 %}{% endblock %}
+{% endblock %}
+
+{% block title %}
+    Menu
+{% endblock %}
+
+{% block body %}
+<div class="row align-items-center h-100">
+
+	<div class="col-1"></div>
+
+	<div class="col-10">
+
+		<div class ="container-fluid menu">
+
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark menu_list">
+				
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav nav-fill w-100">
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'index' %}">Pizza <span class="sr-only">(current)</span></a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'Subs' %}">Subs</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'Pasta' %}">Pasta</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'Salads' %}">Salad</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'Dinner_platter' %}">Dinner Platter</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'Checkout' %}">Check out</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="{% url 'logout' %}">Log out</a>
+						</li>
+					</ul>
+				</div>
+
+			</nav>
+
+			<div class ="container-fluid selection">
+				{% block body3 %}
+
+				<div class = "add_to_cart" href="#"> Add to Cart</div>
+
+			{% block body2 %}
+            {% endblock %}
+
+
+            </div>
+
+            <div class="row align-items-center h-20">
+
+            	<div class="col-9"></div>
+
+            	<div class="col-3">
+            	<a class="fa fa-shopping-cart" href="{% url 'Checkout' %}"> :<span class="total_basket_value">{{basket_total}} </span></a>
+            	</div>
+
+            </div>
+                {% endblock %}
+
+
+		</div>
+
+    </div>
+
+
+    <div class="col-1"></div>
+
+
+ </div>
+
+{% endblock %}
